@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- 配置全局属性 -->
+    <settings>
+
+        <!-- 无论是mybatis还是hibernate，底层都是由jdbc去实现 -->
+        <!-- 使用jdbc的getGeneratedKeys，获取数据库自增主键值 -->
+        <setting name="useGeneratedKeys" value="true"/>
+
+        <!-- 使用列别名替换列名 默认为true
+         例子：select name（表中列名） as title（实体中属性名） from table
+         配置后可将从name列中查询到的值，自动装配到实体的title属性中
+         -->
+        <setting name="useColumnLabel" value="true"/>
+
+        <!-- 开启驼峰命名转换：表中（create_time）->实体中（createTime） -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+</configuration>
